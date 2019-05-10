@@ -1,9 +1,10 @@
-package com.saber.green.decisionshake.dao;
+package com.saber.green.decisionshake.data.database;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.saber.green.decisionshake.model.Note;
+import com.saber.green.decisionshake.data.dao.NoteDao;
+import com.saber.green.decisionshake.entity.Note;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;

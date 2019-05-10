@@ -1,4 +1,4 @@
-package com.saber.green.decisionshake.activity;
+package com.saber.green.decisionshake.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

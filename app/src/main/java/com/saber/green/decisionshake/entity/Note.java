@@ -1,4 +1,4 @@
-package com.saber.green.decisionshake.model;
+package com.saber.green.decisionshake.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

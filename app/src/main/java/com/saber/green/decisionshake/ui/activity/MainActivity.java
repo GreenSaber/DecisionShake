@@ -1,4 +1,4 @@
-package com.saber.green.decisionshake.activity;
+package com.saber.green.decisionshake.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.saber.green.decisionshake.model.Note;
-import com.saber.green.decisionshake.adapter.NoteAdapter;
+import com.saber.green.decisionshake.entity.Note;
+import com.saber.green.decisionshake.ui.adapter.NoteAdapter;
 import com.saber.green.decisionshake.viewmodel.NoteViewModel;
 import com.saber.green.decisionshake.R;
 
@@ -28,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
     public static final int EDIT_NOTE_REQUEST = 2;
     private NoteViewModel noteViewModel;
     private FloatingActionButton buttonAddNote;
+    private FloatingActionButton buttonReady;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonAddNote = findViewById(R.id.button_add_note);
+        buttonReady = findViewById(R.id.button_ready);
         onAddNoteButtonClick();
         onReadyButtonClick();
 
@@ -114,7 +116,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onReadyButtonClick() {
-        Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
-
+        buttonReady.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

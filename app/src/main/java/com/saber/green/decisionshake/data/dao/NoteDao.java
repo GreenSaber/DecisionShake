@@ -1,6 +1,6 @@
-package com.saber.green.decisionshake.dao;
+package com.saber.green.decisionshake.data.dao;
 
-import com.saber.green.decisionshake.model.Note;
+import com.saber.green.decisionshake.entity.Note;
 
 import java.util.List;
 
@@ -28,4 +28,7 @@ public interface NoteDao {
 
     @Query("SELECT * FROM note_table")
     LiveData<List<Note>> getAllNotes();
+
+    @Query("SELECT * FROM note_table ORDER BY RANDOM() LIMIT 1")
+    LiveData<Note> getRandomNote();
 }

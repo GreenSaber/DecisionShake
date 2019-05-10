@@ -1,4 +1,4 @@
-package com.saber.green.decisionshake.adapter;
+package com.saber.green.decisionshake.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.saber.green.decisionshake.R;
-import com.saber.green.decisionshake.model.Note;
+import com.saber.green.decisionshake.entity.Note;
 
 import java.util.ArrayList;
 import java.util.List;

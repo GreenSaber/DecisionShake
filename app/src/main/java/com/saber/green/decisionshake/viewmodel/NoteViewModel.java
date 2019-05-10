@@ -2,8 +2,8 @@ package com.saber.green.decisionshake.viewmodel;
 
 import android.app.Application;
 
-import com.saber.green.decisionshake.model.Note;
-import com.saber.green.decisionshake.dao.NoteRepository;
+import com.saber.green.decisionshake.entity.Note;
+import com.saber.green.decisionshake.data.repository.NoteRepository;
 
 import java.util.List;
 
@@ -12,29 +12,29 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 public class NoteViewModel extends AndroidViewModel {
-    private NoteRepository repository;
+    private NoteRepository noteRepository;
     private LiveData<List<Note>> allNotes;
 
     public NoteViewModel(@NonNull Application application) {
         super(application);
-        repository = new NoteRepository(application);
-        allNotes = repository.getAllNotes();
+        noteRepository = new NoteRepository(application);
+        allNotes = noteRepository.getAllNotes();
     }
 
     public void insert(Note note) {
-        repository.insert(note);
+        noteRepository.insert(note);
     }
 
     public void update(Note note) {
-        repository.update(note);
+        noteRepository.update(note);
     }
 
     public void delete(Note note) {
-        repository.delete(note);
+        noteRepository.delete(note);
     }
 
     public void deleteAllNotes() {
-        repository.deleteAllNotes();
+        noteRepository.deleteAllNotes();
     }
 
     public LiveData<List<Note>> getAllNotes() {

@@ -1,11 +1,11 @@
-package com.saber.green.decisionshake.dao;
+package com.saber.green.decisionshake.data.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
-import com.saber.green.decisionshake.dao.NoteDao;
-import com.saber.green.decisionshake.dao.NoteDatabase;
-import com.saber.green.decisionshake.model.Note;
+import com.saber.green.decisionshake.data.dao.NoteDao;
+import com.saber.green.decisionshake.data.database.NoteDatabase;
+import com.saber.green.decisionshake.entity.Note;
 
 import java.util.List;
 
@@ -40,6 +40,10 @@ public class NoteRepository {
 
     public LiveData<List<Note>> getAllNotes() {
         return allNotes;
+    }
+
+    public LiveData<Note> getRandomNote() {
+        return noteDao.getRandomNote();
     }
 
     private static class InsertNoteAsyncTask extends AsyncTask<Note, Void, Void> {
