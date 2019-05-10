@@ -12,6 +12,7 @@ import com.saber.green.decisionshake.entity.Note;
 public class ResultViewModel extends AndroidViewModel {
 
     private NoteRepository noteRepository;
+    private LiveData<Note> randomNote;
 
     public ResultViewModel(@NonNull Application application) {
         super(application);
@@ -19,7 +20,8 @@ public class ResultViewModel extends AndroidViewModel {
     }
 
     public LiveData<Note> getRandomNote() {
-        return noteRepository.getRandomNote();
+        randomNote = (randomNote == null) ? noteRepository.getRandomNote() : randomNote;
+        return randomNote;
     }
 
 }

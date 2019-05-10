@@ -8,53 +8,39 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.saber.green.decisionshake.R;
+import com.saber.green.decisionshake.utils.ShakeUtils;
 import com.squareup.seismic.ShakeDetector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ShakeActivity extends AppCompatActivity implements ShakeDetector.Listener {
+public class ShakeActivity extends AppCompatActivity {
 
     TextView shakeText;
     Button nextButton;
-
-    SensorManager sensorManager;
-    ShakeDetector shakeDetector;
-
+    ShakeUtils shakeUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shake);
-
         shakeText = findViewById(R.id.shake_text_view);
         nextButton = findViewById(R.id.next);
+        initShakeUtils();
         onNextButtonClick();
-        initShake();
-    }
-
-    @Override
-    public void hearShake() {
-        shakeDetector.stop();
-        startResultActivity();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        shakeDetector.start(sensorManager);
+        shakeUtils.startHearShake();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        shakeDetector.stop();
+        shakeUtils.stopHearShake();
     }
 
-    public void initShake() {
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        shakeDetector = new ShakeDetector(this);
-        shakeDetector.setSensitivity(ShakeDetector.SENSITIVITY_LIGHT);
-    }
 
     //TODO remove for final build
     public void onNextButtonClick() {
@@ -66,7 +52,17 @@ public class ShakeActivity extends AppCompatActivity implements ShakeDetector.Li
         });
     }
 
-    private void startResultActivity() {
+    public void initShakeUtils() {
+        shakeUtils = new ShakeUtils(this, new ShakeDetector.Listener() {
+            @Override
+            public void hearShake() {
+                shakeUtils.stopHearShake();
+                startResultActivity();
+            }
+        });
+    }
+
+    public void startResultActivity() {
         Intent intent = new Intent(ShakeActivity.this, ResultActivity.class);
         startActivity(intent);
     }

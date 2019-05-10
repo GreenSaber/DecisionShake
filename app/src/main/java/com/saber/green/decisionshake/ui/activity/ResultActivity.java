@@ -18,7 +18,7 @@ import com.saber.green.decisionshake.viewmodel.ResultViewModel;
 
 public class ResultActivity extends AppCompatActivity {
 
-    private ResultViewModel resultViewModel;
+    ResultViewModel resultViewModel;
     VibrationUtils vibrationUtils;
     TextView resultText;
 

@@ -24,8 +24,6 @@ public class AddEditNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-
-
         editTextOption = findViewById(R.id.edit_text_option);
         buttonSaveNote = findViewById(R.id.button_save_note);
         buttonSaveNote.setOnClickListener(new View.OnClickListener() {
