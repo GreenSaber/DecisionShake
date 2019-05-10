@@ -23,8 +23,10 @@ public class ShakeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shake);
+
         shakeText = findViewById(R.id.shake_text_view);
         nextButton = findViewById(R.id.next);
+
         initShakeUtils();
         onNextButtonClick();
     }
@@ -40,7 +42,6 @@ public class ShakeActivity extends AppCompatActivity {
         super.onPause();
         shakeUtils.stopHearShake();
     }
-
 
     //TODO remove for final build
     public void onNextButtonClick() {

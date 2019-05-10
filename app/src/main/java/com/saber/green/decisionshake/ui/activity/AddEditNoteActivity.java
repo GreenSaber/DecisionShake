@@ -26,17 +26,22 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         editTextOption = findViewById(R.id.edit_text_option);
         buttonSaveNote = findViewById(R.id.button_save_note);
+
+        onButtonSaveClick();
+
+        Intent intent = getIntent();
+        if (intent.hasExtra(EXTRA_ID)) {
+            editTextOption.setText(intent.getStringExtra(EXTRA_OPTION));
+        }
+    }
+
+    public void onButtonSaveClick() {
         buttonSaveNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveNote();
             }
         });
-
-        Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_ID)) {
-            editTextOption.setText(intent.getStringExtra(EXTRA_OPTION));
-        }
     }
 
     private void saveNote() {
@@ -55,6 +60,5 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         setResult(RESULT_OK, intent);
         finish();
-
     }
 }

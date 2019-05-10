@@ -1,10 +1,6 @@
 package com.saber.green.decisionshake.ui.activity;
 
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,10 +22,17 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        resultViewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
+        resultText = findViewById(R.id.result);
+
         vibrationUtils = new VibrationUtils(this);
         vibrationUtils.vibrate();
-        resultText = findViewById(R.id.result);
-        resultViewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
+
+        observeRandomNoteChange();
+    }
+
+    public void observeRandomNoteChange(){
         resultViewModel.getRandomNote().observe(this, new Observer<Note>() {
             @Override
             public void onChanged(Note note) {
@@ -37,6 +40,5 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }
