@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
             }
         });
     }
