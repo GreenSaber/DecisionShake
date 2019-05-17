@@ -1,26 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    app:cardCornerRadius="16dp">
+    app:cardCornerRadius="30dp"
+    >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/title_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="option"
-            android:textAppearance="@android:style/TextAppearance.Large" />
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/option_title"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+        <ImageButton
+            android:id="@+id/edit_button_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@id/title_text_view"
+            android:background="@drawable/shape_note_item_edit_delete"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/ic_mode_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_button_view"
+            app:layout_constraintEnd_toStartOf="@+id/delete_button_view"
+            app:layout_constraintTop_toTopOf="@+id/delete_button_view" />
 
+        <ImageButton
+            android:id="@+id/delete_button_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/edit_button_view"
+            android:background="@drawable/shape_note_item_edit_delete"
+            android:backgroundTint="@color/red"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@+id/title_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_text_view"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

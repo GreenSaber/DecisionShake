@@ -3,6 +3,8 @@ package com.saber.green.std.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 101;
     public static final int EDIT_NOTE_REQUEST = 102;
     NoteViewModel noteViewModel;
-    private FloatingActionButton buttonAddNote;
-    private FloatingActionButton buttonDeleteAllNotes;
-    private FloatingActionButton buttonReady;
+    private ImageButton buttonAddNote;
+    private ImageButton buttonDeleteAllNotes;
+    private Button buttonReady;
     private RecyclerView recyclerView;
     final NoteAdapter adapter = new NoteAdapter();
 
@@ -153,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-   @Override
-    public void onBackPressed(){
-       finishAffinity();
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
 
-   }
+    }
 }

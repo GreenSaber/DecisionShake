@@ -26,7 +26,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginBottom="236dp"
         android:src="@drawable/ic_vibration"
-        android:theme="@style/CustomButtonStyle"
+        android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -37,7 +37,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="236dp"
         android:src="@drawable/ic_redo"
-        android:theme="@style/CustomButtonStyle"
+        android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

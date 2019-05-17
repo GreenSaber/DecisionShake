@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shake4Decision</string>
+    <string name="option_title">опция</string>
+    <string name="ready_button">Готово</string>
+</resources>

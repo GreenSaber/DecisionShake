@@ -28,10 +28,10 @@
         android:layout_height="60dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="36dp"
+        android:background="@color/blue"
         android:text="OK"
         android:textColor="@color/design_default_color_on_primary"
         android:textSize="24dp"
-        android:theme="@style/CustomButtonStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_option" />
 
@@ -40,10 +40,10 @@
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginEnd="64dp"
+        android:background="@color/blue"
         android:src="@drawable/ic_mic"
         android:text="OK"
         android:textSize="24dp"
-        android:theme="@style/CustomButtonStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button_save_note" />
 
