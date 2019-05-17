@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/button_ready"
+        app:layout_constraintBottom_toTopOf="@id/button_delete_all_notes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,14 +24,14 @@
         android:id="@+id/button_add_note"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_big"
         android:background="@drawable/shape_button_round"
         android:src="@drawable/ic_add"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/button_ready"
+        app:layout_constraintBottom_toTopOf="@+id/button_delete_all_notes"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
