@@ -7,43 +7,64 @@
     android:background="@color/white"
     tools:context=".ui.activity.MainActivity">
 
+    <TextView
+        android:id="@+id/decide_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf"
+        android:paddingStart="@dimen/margin_big"
+        android:paddingTop="@dimen/margin_big"
+        android:paddingEnd="@dimen/margin_big"
+        android:paddingBottom="@dimen/margin_big"
+        android:text="I can't decide between following options:"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/text_size_big"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@id/button_delete_all_notes"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decide_text"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/note_item" />
 
-    <ImageButton
+    <Button
         android:id="@+id/button_add_note"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="@dimen/margin_default"
-        android:layout_marginBottom="@dimen/margin_big"
-        android:background="@drawable/shape_button_round"
-        android:src="@drawable/ic_add"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/button_delete_all_notes"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/button_delete_all_notes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button_size_default"
+        android:layout_height="@dimen/button_size_default"
         android:layout_marginEnd="@dimen/margin_default"
         android:layout_marginBottom="@dimen/margin_default"
         android:background="@drawable/shape_button_round"
-        android:src="@drawable/ic_delete"
-        android:textSize="25sp"
-        app:backgroundTint="@color/red"
+        android:fontFamily="@font/fa_old"
+        android:text="@string/fa_plus"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:backgroundTint="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button_delete_all_notes"
+        android:layout_width="@dimen/button_size_default"
+        android:layout_height="@dimen/button_size_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:background="@drawable/shape_button_round"
+        android:fontFamily="@font/fa_old"
+        android:text="@string/fa_trash"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/text_size_big"
+        app:backgroundTint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_ready"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,19 +74,20 @@
 
     <Button
         android:id="@+id/button_ready"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button_size_big"
+        android:layout_height="@dimen/button_size_default"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/shape_button_long_round"
-        android:src="@drawable/ic_done_all"
+        android:fontFamily="@font/sf"
         android:text="@string/ready_button"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        app:backgroundTint="@color/green"
-        app:layout_constraintBottom_toBottomOf="@+id/button_delete_all_notes"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_delete_all_notes" />
+        app:layout_constraintStart_toEndOf="@+id/button_delete_all_notes"
+        app:layout_constraintTop_toTopOf="@+id/button_delete_all_notes" />
 
 </android.support.constraint.ConstraintLayout>

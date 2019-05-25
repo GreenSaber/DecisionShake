@@ -3,8 +3,15 @@
     <dimen name="margin_big">32dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="button_size_default">60dp</dimen>
+    <dimen name="button_size_double">120dp</dimen>
     <dimen name="button_size_big">180dp</dimen>
     <dimen name="button_size_small">40dp</dimen>
+    <dimen name="button_size_half">30dp</dimen>
     <dimen name="radius_default">30dp</dimen>
     <dimen name="radius_small">20dp</dimen>
+
+    <dimen name="text_size_very_big">32sp</dimen>
+    <dimen name="text_size_big">26sp</dimen>
+    <dimen name="text_size_small">22sp</dimen>
+
 </resources>

@@ -3,7 +3,7 @@ package com.saber.green.std.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,8 +20,8 @@ public class ResultActivity extends AppCompatActivity {
     ResultViewModel resultViewModel;
     VibrationUtils vibrationUtils;
     private TextView resultText;
-    private ImageButton shakeAgainButton;
-    private ImageButton restartButton;
+    private Button shakeAgainButton;
+    private Button restartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ResultActivity.this, ShakeActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
             }
         });
     }
@@ -66,9 +67,15 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ResultActivity.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
+    }
 
 }

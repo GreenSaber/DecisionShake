@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Shake4Decision</string>
-    <string name="ready_button">Готово</string>
+    <string name="ready_button">ГОТОВО</string>
+    <string name="ok_button">ОК</string>
+    <string name="fa_edit">\uf040</string>
+    <string name="fa_trash_o">\uf014</string>
+    <string name="fa_trash">\uf1f8</string>
+    <string name="fa_repeat">\uf01e</string>
+    <string name="fa_mobile">\uf10b</string>
+    <string name="fa_angle_double_left">\uf100</string>
+    <string name="fa_angle_double_right">\uf101</string>
+    <string name="fa_reshake">\uf100 \uf10b \uf101</string>
+    <string name="fa_plus">\uf067</string>
+    <string name="fa_times">\uf00d</string>
+    <string name="fa_angle_right">\uf105</string>
+    <string name="fa_microphone">\uf130</string>
 </resources>

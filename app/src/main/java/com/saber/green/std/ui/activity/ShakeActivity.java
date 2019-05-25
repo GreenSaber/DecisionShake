@@ -65,6 +65,13 @@ public class ShakeActivity extends AppCompatActivity {
     public void startResultActivity() {
         Intent intent = new Intent(ShakeActivity.this, ResultActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 
 }

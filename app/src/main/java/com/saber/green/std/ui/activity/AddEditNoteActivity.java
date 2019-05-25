@@ -26,7 +26,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
     private EditText editTextOption;
     private Button buttonSaveNote;
-    private ImageButton buttonMicro;
+    private Button buttonMicro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,5 +104,12 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         setResult(RESULT_OK, intent);
         finish();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 }
