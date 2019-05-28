@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,27 +10,38 @@
         android:id="@+id/shake_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shake your device..."
-        android:textColor="@color/dark_blue"
+        android:layout_marginBottom="@dimen/margin_big"
+        android:fontFamily="@font/sf"
         android:paddingStart="@dimen/margin_default"
         android:paddingEnd="@dimen/margin_default"
-        android:fontFamily="@font/sf"
+        android:text="Shake your device..."
+        android:textColor="@color/dark_blue"
         android:textSize="@dimen/text_size_very_big"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/phoneView"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/shakeView"
+        android:layout_width="315dp"
+        android:layout_height="270dp"
+        android:src="@drawable/sh3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.4" />
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="next"
-        app:layout_constraintEnd_toEndOf="@+id/shake_text_view"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@+id/shake_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/shake_text_view" />
+    <ImageView
+        android:id="@+id/phoneView"
+        android:layout_width="135dp"
+        android:layout_height="270dp"
+        android:src="@drawable/ph3"
+        app:layout_constraintBottom_toBottomOf="@+id/shakeView"
+        app:layout_constraintEnd_toEndOf="@+id/shakeView"
+        app:layout_constraintStart_toStartOf="@+id/shakeView"
+        app:layout_constraintTop_toTopOf="@+id/shakeView" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

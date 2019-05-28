@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ui.activity.MainActivity">
+
 
     <TextView
         android:id="@+id/decide_text"
@@ -16,10 +17,11 @@
         android:paddingTop="@dimen/margin_big"
         android:paddingEnd="@dimen/margin_big"
         android:paddingBottom="@dimen/margin_big"
-        android:text="I can't decide between following options:"
+        android:text="@string/cant_decide"
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/text_size_big"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,7 +81,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/shape_button_long_round"
+        android:drawableEnd="@drawable/ic_arrow_right"
         android:fontFamily="@font/sf"
+        android:paddingStart="@dimen/margin_default"
+        android:paddingEnd="@dimen/margin_default"
         android:text="@string/ready_button"
         android:textColor="@color/yellow"
         android:textSize="@dimen/text_size_big"
@@ -90,4 +95,4 @@
         app:layout_constraintStart_toEndOf="@+id/button_delete_all_notes"
         app:layout_constraintTop_toTopOf="@+id/button_delete_all_notes" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
