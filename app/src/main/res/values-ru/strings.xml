@@ -7,6 +7,9 @@
     <string name="my_option">Мой вариант :</string>
     <string name="result_label_1">Ваш выбор :</string>
     <string name="option_hint">Вариант</string>
+    <string name="shake_device">Потрясите ваш смартфон!</string>
+    <string name="double_tap">&#8230;или просто дважды нажмите на картику сверху</string>
+
     <string name="fa_edit">\uf040</string>
     <string name="fa_trash_o">\uf014</string>
     <string name="fa_trash">\uf1f8</string>

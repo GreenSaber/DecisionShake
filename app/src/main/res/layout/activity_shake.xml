@@ -12,13 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_big"
         android:fontFamily="@font/sf"
-        android:paddingStart="@dimen/margin_default"
-        android:paddingEnd="@dimen/margin_default"
-        android:text="Shake your device..."
+        android:text="@string/shake_device"
         android:textColor="@color/dark_blue"
-        android:textSize="@dimen/text_size_very_big"
+        android:textSize="@dimen/text_size_big"
         app:layout_constraintBottom_toTopOf="@+id/phoneView"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -43,5 +41,21 @@
         app:layout_constraintEnd_toEndOf="@+id/shakeView"
         app:layout_constraintStart_toStartOf="@+id/shakeView"
         app:layout_constraintTop_toTopOf="@+id/shakeView" />
+
+    <TextView
+        android:id="@+id/double_tap_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="@dimen/margin_big"
+        android:layout_marginEnd="48dp"
+        android:fontFamily="@font/sf"
+        android:text="@string/double_tap"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shakeView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
