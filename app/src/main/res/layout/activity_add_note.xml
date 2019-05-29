@@ -19,30 +19,46 @@
         android:text="@string/my_option"
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/text_size_big"
-        app:layout_constraintBottom_toTopOf="@+id/edit_text_option"
+        app:layout_constraintBottom_toTopOf="@+id/text_input_layout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_text_option"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/TextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_default"
-        android:backgroundTint="@color/yellow"
         android:fontFamily="@font/sf"
         android:hint="@string/option_hint"
-        android:textColor="@color/dark_blue"
         android:textColorHint="@color/light_blue_1"
-        android:textCursorDrawable="@color/yellow"
-        android:textSize="@dimen/text_size_big"
+        app:boxCornerRadiusBottomEnd="@dimen/radius_default"
+        app:boxCornerRadiusBottomStart="@dimen/radius_default"
+        app:boxCornerRadiusTopEnd="@dimen/radius_default"
+        app:boxCornerRadiusTopStart="@dimen/radius_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/yellow"
+        app:endIconContentDescription="end_icon"
+        app:layout_constraintVertical_bias="0.35">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_edit_text"
+            android:drawableEnd="@drawable/ic_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHighlight="@color/yellow"
+            android:fontFamily="@font/sf"
+            android:textColor="@color/dark_blue"
+            android:textCursorDrawable="@color/blue"
+            android:textSize="@dimen/text_size_big" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button_save_note"
@@ -64,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_option" />
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout" />
 
     <Button
         android:id="@+id/button_micro"

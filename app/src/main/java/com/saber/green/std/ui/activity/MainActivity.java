@@ -2,17 +2,17 @@ package com.saber.green.std.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.saber.green.std.entity.Note;
 import com.saber.green.std.ui.adapter.NoteAdapter;
 import com.saber.green.std.viewmodel.NoteViewModel;
 import com.saber.green.std.R;
-
 import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,22 +63,15 @@ public class MainActivity extends AppCompatActivity {
             String option = data.getStringExtra(AddEditNoteActivity.EXTRA_OPTION);
             Note note = new Note(option);
             noteViewModel.insert(note);
-            Toast.makeText(this, "Option saved", Toast.LENGTH_SHORT).show();
-
         } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == RESULT_OK) {
             int id = data.getIntExtra(AddEditNoteActivity.EXTRA_ID, -1);
             if (id == -1) {
-                Toast.makeText(this, "Option can't be updated", Toast.LENGTH_SHORT).show();
                 return;
             }
             String option = data.getStringExtra(AddEditNoteActivity.EXTRA_OPTION);
             Note note = new Note(option);
             note.setId(id);
             noteViewModel.update(note);
-            Toast.makeText(this, "Option updated", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Option not saved", Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -96,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     public void onAddNoteButtonClick() {
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
@@ -122,13 +114,17 @@ public class MainActivity extends AppCompatActivity {
         buttonReady.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
+                if (noteViewModel.getAllNotes().getValue().size() <2) {
+                    StyleableToast.makeText(MainActivity.this, getString(R.string.toast_setup_2_options), Toast.LENGTH_LONG, R.style.customToastCenter).show();
+                } else {
+                    Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
+                }
+
             }
         });
     }
-
 
     private void startEditActivity(Note note){
         Intent intent = new Intent(MainActivity.this, AddEditNoteActivity.class);
@@ -160,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDeleteItemClick(Note note) {
                 noteViewModel.delete(note);
-                Toast.makeText(MainActivity.this, "Note deleted", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -175,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 noteViewModel.delete(adapter.getNoteAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(MainActivity.this, "Note deleted", Toast.LENGTH_SHORT).show();
             }
         });
         itemTouchHelper.attachToRecyclerView(recyclerView);

@@ -10,7 +10,7 @@
     <dimen name="radius_default">30dp</dimen>
     <dimen name="radius_small">20dp</dimen>
 
-    <dimen name="text_size_very_big">32sp</dimen>
+    <dimen name="text_size_very_big">38sp</dimen>
     <dimen name="text_size_big">26sp</dimen>
     <dimen name="text_size_small">22sp</dimen>
 

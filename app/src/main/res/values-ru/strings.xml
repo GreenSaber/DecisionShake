@@ -4,9 +4,9 @@
     <string name="ready_button">ГОТОВО</string>
     <string name="ok_button">ОК</string>
     <string name="cant_decide">Не могу определиться между :</string>
-    <string name="my_option">Мой выбор :</string>
-    <string name="result_label_1">Ты должен выбрать :</string>
-    <string name="option_hint">Введите ваш вариант&#8230;</string>
+    <string name="my_option">Мой вариант :</string>
+    <string name="result_label_1">Ваш выбор :</string>
+    <string name="option_hint">Вариант</string>
     <string name="fa_edit">\uf040</string>
     <string name="fa_trash_o">\uf014</string>
     <string name="fa_trash">\uf1f8</string>
@@ -19,4 +19,10 @@
     <string name="fa_times">\uf00d</string>
     <string name="fa_angle_right">\uf105</string>
     <string name="fa_microphone">\uf130</string>
+
+    <string name="toast_setup_2_options">Задайте как минимум 2 пункта</string>
+    <string name="toast_device_not_support">Ваше устройство не поддерживает речевой ввод</string>
+    <string name="toast_failed_recognize">Не получилось распознать речь</string>
+    <string name="toast_insert_option">Пожалуйста, введите текст</string>
+
 </resources>
