@@ -1,24 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginStart="@dimen/margin_default"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginEnd="@dimen/margin_default"
+    android:layout_marginBottom="@dimen/margin_small"
+    app:strokeColor="@color/blue"
+    app:rippleColor="@color/blue"
+    app:strokeWidth="1dp"
+    app:cardCornerRadius="26dp">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/title_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="option"
-            android:textAppearance="@android:style/TextAppearance.Large" />
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:text="Lorem ipsum amini lorem ipsum asdasd a s asd as as  adsa"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@color/dark_blue"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/edit_button_view"
+            style="@style/EditDeleteNoteItem"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_toEndOf="@id/title_text_view"
+            android:background="@drawable/shape_note_item_edit_delete"
+            android:backgroundTint="@color/blue"
+            android:text="@string/fa_edit"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="@+id/delete_button_view"
+            app:layout_constraintEnd_toStartOf="@+id/delete_button_view"
+            app:layout_constraintTop_toTopOf="@+id/delete_button_view" />
 
+        <Button
+            android:id="@+id/delete_button_view"
+            style="@style/EditDeleteNoteItem"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_toEndOf="@id/edit_button_view"
+            android:background="@drawable/shape_note_item_edit_delete"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/fa_times"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@+id/title_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_text_view"
+            app:layout_constraintVertical_bias="0.0" />
 
-</androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

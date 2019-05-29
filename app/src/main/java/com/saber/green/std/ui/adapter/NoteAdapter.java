@@ -3,6 +3,7 @@ package com.saber.green.std.ui.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.saber.green.std.R;
@@ -17,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     private List<Note> notes = new ArrayList<>();
-    private onItemClickListener listener;
+    private onEditItemClickListener onEditItemClickListener;
+    private onDeleteItemClickListener onDeleteItemClickListener;
+    private onTextItemClickListener onTextItemClickListener;
 
     @NonNull
     @Override
@@ -49,27 +52,68 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     class NoteHolder extends RecyclerView.ViewHolder {
         private TextView titleTextView;
+        private Button editButton;
+        private Button deleteButton;
 
         public NoteHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.title_text_view);
+            editButton = itemView.findViewById(R.id.edit_button_view);
+            deleteButton = itemView.findViewById(R.id.delete_button_view);
+
+            editButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if (onEditItemClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onEditItemClickListener.onEditItemClick(notes.get(position));
+                    }
+                }
+            });
+
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if (onDeleteItemClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onDeleteItemClickListener.onDeleteItemClick(notes.get(position));
+                    }
+                }
+            });
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onItemClick(notes.get(position));
+                    if (onTextItemClickListener != null && position != RecyclerView.NO_POSITION) {
+                        onTextItemClickListener.onTextItemClick(notes.get(position));
                     }
                 }
             });
         }
     }
 
-    public interface onItemClickListener {
-        void onItemClick(Note note);
+    public interface onEditItemClickListener {
+        void onEditItemClick(Note note);
     }
 
-    public void setOnItemClickListener(onItemClickListener listener) {
-        this.listener = listener;
+    public interface onDeleteItemClickListener {
+        void onDeleteItemClick(Note note);
+    }
+
+    public interface onTextItemClickListener {
+        void onTextItemClick(Note note);
+    }
+
+    public void setOnEditItemClickListener(onEditItemClickListener listener) {
+        this.onEditItemClickListener = listener;
+    }
+
+    public void setOnDeleteItemClickListener(onDeleteItemClickListener listener) {
+        this.onDeleteItemClickListener = listener;
+    }
+
+    public void setOnTextItemClickListener(onTextItemClickListener listener) {
+        this.onTextItemClickListener = listener;
     }
 }

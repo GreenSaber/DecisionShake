@@ -1,24 +1,45 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/light_blue_1</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/dark_blue</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="TextIcon">
+        <item name="android:fontFamily">@font/fa_old</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="EditDeleteNoteItem">
+        <item name="android:fontFamily">@font/fa_old</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">@dimen/button_size_half</item>
+        <item name="android:layout_height">@dimen/button_size_half</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">5dp</item>
+    </style>
 
-    <style name="CustomButtonStyle" parent="@android:style/Widget.Button">
-        <item name="colorButtonNormal">@color/colorPrimary</item>
+    <style name="customToast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">@color/blue</item>
+        <item name="stFont">@font/sf</item>
+        <item name="stTextSize">20sp</item>
+        <item name="stColorBackground">@color/yellow</item>
+        <item name="stLength">LONG</item>
+        <item name="stRadius">30dp</item>
+    </style>
+
+    <style name="customToastTop" parent="customToast">
+        <item name="stGravity">top</item>
+    </style>
+
+    <style name="customToastCenter" parent="customToast">
+        <item name="stGravity">center</item>
     </style>
 
 </resources>

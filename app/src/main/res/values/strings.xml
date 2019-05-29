@@ -1,4 +1,26 @@
 <resources>
-    <string name="app_name">Shk2dcd</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_name">Shake4Decision</string>
+    <string name="ready_button">READY</string>
+    <string name="ok_button">OK</string>
+    <string name="cant_decide">I can\'t decide between options:</string>
+    <string name="my_option">My option :</string>
+    <string name="result_label_1">Your decision :</string>
+    <string name="option_hint">Option</string>
+    <string name="fa_edit">\uf040</string>
+    <string name="fa_trash_o">\uf014</string>
+    <string name="fa_trash">\uf1f8</string>
+    <string name="fa_repeat">\uf01e</string>
+    <string name="fa_mobile">\uf10b</string>
+    <string name="fa_angle_double_left">\uf100</string>
+    <string name="fa_angle_double_right">\uf101</string>
+    <string name="fa_reshake">\uf100 \uf10b \uf101</string>
+    <string name="fa_plus">\uf067</string>
+    <string name="fa_times">\uf00d</string>
+    <string name="fa_angle_right">\uf105</string>
+    <string name="fa_microphone">\uf130</string>
+
+    <string name="toast_setup_2_options">Set up at least 2 options</string>
+    <string name="toast_device_not_support">Your device doesn\'t support speech input</string>
+    <string name="toast_failed_recognize">Failed to recognize speech</string>
+    <string name="toast_insert_option">Please insert your option</string>
 </resources>

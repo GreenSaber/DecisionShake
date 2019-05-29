@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.saber.green.std.R;
 
 import androidx.annotation.Nullable;
@@ -24,16 +25,20 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
     public static final int RECOGNIZE_SPEECH_REQUEST = 201;
 
-    private EditText editTextOption;
+    private TextInputEditText textInputEditText;
+    private TextInputLayout textInputLayout;
+
     private Button buttonSaveNote;
-    private ImageButton buttonMicro;
+    private Button buttonMicro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-        editTextOption = findViewById(R.id.edit_text_option);
+        textInputLayout = findViewById(R.id.text_input_layout);
+        textInputEditText = findViewById(R.id.text_input_edit_text);
+
         buttonSaveNote = findViewById(R.id.button_save_note);
         buttonMicro = findViewById(R.id.button_micro);
 
@@ -42,8 +47,9 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_ID)) {
-            editTextOption.setText(intent.getStringExtra(EXTRA_OPTION));
+            textInputEditText.setText(intent.getStringExtra(EXTRA_OPTION));
         }
+
     }
 
     public void onButtonMicroClick() {
@@ -62,7 +68,8 @@ public class AddEditNoteActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, RECOGNIZE_SPEECH_REQUEST);
         } else {
-            Toast.makeText(this, "Your device doesn't support speech input", Toast.LENGTH_LONG).show();
+            StyleableToast.makeText(this, getString(R.string.toast_device_not_support), Toast.LENGTH_LONG, R.style.customToastTop).show();
+
         }
 
     }
@@ -72,9 +79,9 @@ public class AddEditNoteActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RECOGNIZE_SPEECH_REQUEST && resultCode == RESULT_OK && data != null) {
             ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            editTextOption.setText(result.get(0));
+            textInputEditText.setText(result.get(0));
         } else {
-            Toast.makeText(this, "Failed to recognize speech", Toast.LENGTH_LONG).show();
+            StyleableToast.makeText(this, getString(R.string.toast_failed_recognize), Toast.LENGTH_LONG, R.style.customToastTop).show();
         }
 
     }
@@ -89,9 +96,9 @@ public class AddEditNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote() {
-        String option = editTextOption.getText().toString();
+        String option = textInputEditText.getText().toString();
         if (option.trim().isEmpty()) {
-            Toast.makeText(this, "Please insert your option", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this, getString(R.string.toast_insert_option), Toast.LENGTH_LONG, R.style.customToastTop).show();
             return;
         }
         Intent intent = new Intent();
@@ -104,5 +111,12 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         setResult(RESULT_OK, intent);
         finish();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 }

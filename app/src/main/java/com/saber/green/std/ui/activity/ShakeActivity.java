@@ -3,7 +3,9 @@ package com.saber.green.std.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.saber.green.std.R;
@@ -15,8 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ShakeActivity extends AppCompatActivity {
 
     private TextView shakeText;
-    private Button nextButton;
+    private ImageView phoneView;
+    private ImageView shakeView;
     ShakeUtils shakeUtils;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +29,13 @@ public class ShakeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shake);
 
         shakeText = findViewById(R.id.shake_text_view);
-        nextButton = findViewById(R.id.next);
+        phoneView = findViewById(R.id.phoneView);
+        shakeView = findViewById(R.id.shakeView);
 
         initShakeUtils();
-        onNextButtonClick();
+        onPhoneImageClick();
+        onShakeImageClick();
+        animatePhoneShake();
     }
 
     @Override
@@ -42,9 +50,17 @@ public class ShakeActivity extends AppCompatActivity {
         shakeUtils.stopHearShake();
     }
 
-    //TODO remove for final build
-    public void onNextButtonClick() {
-        nextButton.setOnClickListener(new View.OnClickListener() {
+    public void onPhoneImageClick() {
+        phoneView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startResultActivity();
+            }
+        });
+    }
+
+    public void onShakeImageClick() {
+        shakeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startResultActivity();
@@ -65,6 +81,17 @@ public class ShakeActivity extends AppCompatActivity {
     public void startResultActivity() {
         Intent intent = new Intent(ShakeActivity.this, ResultActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
+    }
+
+    public void animatePhoneShake() {
+        Animation shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim_shake);
+        phoneView.setAnimation(shakeAnimation);
+    }
 }
