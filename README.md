@@ -1,1 +1,1 @@
-# SHAKE.D - shake for decisoin
+# SHAKE.D - shake for decision
