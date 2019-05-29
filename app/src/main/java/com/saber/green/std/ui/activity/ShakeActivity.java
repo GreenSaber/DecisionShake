@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.saber.green.std.R;
+import com.saber.green.std.listeners.DoubleClickListener;
 import com.saber.green.std.utils.ShakeUtils;
 import com.squareup.seismic.ShakeDetector;
 
@@ -51,18 +52,18 @@ public class ShakeActivity extends AppCompatActivity {
     }
 
     public void onPhoneImageClick() {
-        phoneView.setOnClickListener(new View.OnClickListener() {
+        phoneView.setOnClickListener(new DoubleClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onDoubleClick(View view) {
                 startResultActivity();
             }
         });
     }
 
     public void onShakeImageClick() {
-        shakeView.setOnClickListener(new View.OnClickListener() {
+        shakeView.setOnClickListener(new DoubleClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onDoubleClick(View view) {
                 startResultActivity();
             }
         });

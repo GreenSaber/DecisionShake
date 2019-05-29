@@ -6,6 +6,9 @@
     <string name="my_option">My option :</string>
     <string name="result_label_1">Your decision :</string>
     <string name="option_hint">Option</string>
+    <string name="shake_device">Shake your device!</string>
+    <string name="double_tap">&#8230;or just double tap on the image above</string>
+
     <string name="fa_edit">\uf040</string>
     <string name="fa_trash_o">\uf014</string>
     <string name="fa_trash">\uf1f8</string>
