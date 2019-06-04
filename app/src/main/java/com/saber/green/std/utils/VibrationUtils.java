@@ -16,12 +16,13 @@ public class VibrationUtils {
     }
 
     public void vibrate() {
+        long[] pattern = new long[]{0, 350, 250, 350};
         Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                vibrator.vibrate(VibrationEffect.createWaveform(pattern, VibrationEffect.DEFAULT_AMPLITUDE));
             } else {
-                vibrator.vibrate(500);
+                vibrator.vibrate(pattern, -1);
             }
         }
 
