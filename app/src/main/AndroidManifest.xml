@@ -11,10 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.saber.green.std.ui.activity.ResultActivity"></activity>
-        <activity android:name="com.saber.green.std.ui.activity.ShakeActivity" />
-        <activity android:name="com.saber.green.std.ui.activity.AddEditNoteActivity" />
-        <activity android:name="com.saber.green.std.ui.activity.MainActivity">
+        <activity
+            android:name="com.saber.green.std.ui.activity.ResultActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.saber.green.std.ui.activity.ShakeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saber.green.std.ui.activity.AddEditNoteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.saber.green.std.ui.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
