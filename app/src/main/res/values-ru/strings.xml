@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Shake4Decision</string>
+    <string name="app_name">SHAKE.D</string>
     <string name="ready_button">ГОТОВО</string>
     <string name="ok_button">ОК</string>
     <string name="cant_decide">Не могу определиться между :</string>
@@ -8,7 +8,9 @@
     <string name="result_label_1">Ваш выбор :</string>
     <string name="option_hint">Вариант</string>
     <string name="shake_device">Потрясите ваш смартфон!</string>
-    <string name="double_tap">&#8230;или просто дважды нажмите на картику сверху</string>
+    <string name="double_tap">&#8230;или дважды нажмите на изображение</string>
+    <string name="option_1">Вариант 1</string>
+    <string name="option_2">Вариант 2</string>
 
     <string name="fa_edit">\uf040</string>
     <string name="fa_trash_o">\uf014</string>

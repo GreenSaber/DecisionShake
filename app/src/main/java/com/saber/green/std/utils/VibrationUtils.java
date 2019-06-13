@@ -16,7 +16,7 @@ public class VibrationUtils {
     }
 
     public void vibrate() {
-        long[] pattern = new long[]{0, 350, 250, 350};
+        long[] pattern = new long[]{0, 300, 150, 300};
         Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

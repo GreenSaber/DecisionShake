@@ -38,24 +38,24 @@
         app:boxCornerRadiusBottomStart="@dimen/radius_default"
         app:boxCornerRadiusTopEnd="@dimen/radius_default"
         app:boxCornerRadiusTopStart="@dimen/radius_default"
+        app:endIconContentDescription="end_icon"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/yellow"
-        app:endIconContentDescription="end_icon"
         app:layout_constraintVertical_bias="0.35">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_edit_text"
-            android:drawableEnd="@drawable/ic_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHighlight="@color/yellow"
+            android:drawableEnd="@drawable/ic_cancel"
             android:fontFamily="@font/sf"
             android:textColor="@color/dark_blue"
+            android:textColorHighlight="@color/yellow"
             android:textCursorDrawable="@color/blue"
             android:textSize="@dimen/text_size_big" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,7 +89,6 @@
         android:background="@drawable/shape_button_round"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/fa_old"
-        android:src="@drawable/ic_mic"
         android:text="@string/fa_microphone"
         android:textColor="@color/blue"
         android:textSize="@dimen/text_size_big"

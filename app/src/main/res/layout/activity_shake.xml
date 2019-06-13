@@ -47,15 +47,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="48dp"
         android:layout_marginTop="@dimen/margin_big"
-        android:layout_marginEnd="48dp"
         android:fontFamily="@font/sf"
         android:text="@string/double_tap"
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/text_size_small"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/shakeView"
+        app:layout_constraintStart_toStartOf="@+id/shakeView"
         app:layout_constraintTop_toBottomOf="@+id/shakeView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
