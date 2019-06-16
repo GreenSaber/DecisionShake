@@ -16,25 +16,27 @@ import com.saber.green.std.entity.Note;
 import com.saber.green.std.utils.VibrationUtils;
 import com.saber.green.std.viewmodel.ResultViewModel;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ResultActivity extends AppCompatActivity {
 
     ResultViewModel resultViewModel;
     VibrationUtils vibrationUtils;
-    private TextView resultText;
-    private ImageButton shakeAgainButton;
-    private Button restartButton;
+
+    @BindView(R.id.result) TextView resultText;
+    @BindView(R.id.button_shake_again) ImageButton shakeAgainButton;
+    @BindView(R.id.button_restart) Button restartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        ButterKnife.bind(this);
 
         resultViewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
-        resultText = findViewById(R.id.result);
-        shakeAgainButton = findViewById(R.id.button_shake_again);
-        restartButton = findViewById(R.id.button_restart);
-
         vibrationUtils = new VibrationUtils(this);
+
         vibrationUtils.vibrate();
 
         observeRandomNoteChange();
@@ -76,6 +78,8 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent intent = new Intent(ResultActivity.this, ShakeActivity.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 

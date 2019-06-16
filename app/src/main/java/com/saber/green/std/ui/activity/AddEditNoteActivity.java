@@ -18,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class AddEditNoteActivity extends AppCompatActivity {
 
     public static final String EXTRA_OPTION = "com.saber.green.std.EXTRA_OPTION";
@@ -25,22 +28,16 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
     public static final int RECOGNIZE_SPEECH_REQUEST = 201;
 
-    private TextInputEditText textInputEditText;
-    private TextInputLayout textInputLayout;
-
-    private Button buttonSaveNote;
-    private Button buttonMicro;
+    @BindView(R.id.text_input_edit_text) TextInputEditText textInputEditText;
+    @BindView(R.id.text_input_layout) TextInputLayout textInputLayout;
+    @BindView(R.id.button_save_note) Button buttonSaveNote;
+    @BindView(R.id.button_micro) Button buttonMicro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-
-        textInputLayout = findViewById(R.id.text_input_layout);
-        textInputEditText = findViewById(R.id.text_input_edit_text);
-
-        buttonSaveNote = findViewById(R.id.button_save_note);
-        buttonMicro = findViewById(R.id.button_micro);
+        ButterKnife.bind(this);
 
         onButtonSaveClick();
         onButtonMicroClick();

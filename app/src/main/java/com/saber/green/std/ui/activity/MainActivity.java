@@ -11,7 +11,6 @@ import com.saber.green.std.entity.Note;
 import com.saber.green.std.ui.adapter.NoteAdapter;
 import com.saber.green.std.viewmodel.NoteViewModel;
 import com.saber.green.std.R;
-import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,27 +20,31 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final int ADD_NOTE_REQUEST = 101;
     public static final int EDIT_NOTE_REQUEST = 102;
     NoteViewModel noteViewModel;
-    private Button buttonAddNote;
-    private Button buttonDeleteAllNotes;
-    private Button buttonReady;
-    private RecyclerView recyclerView;
+
+    @BindView(R.id.button_add_note) Button buttonAddNote;
+    @BindView(R.id.button_delete_all_notes) Button buttonDeleteAllNotes;
+    @BindView(R.id.button_ready) Button buttonReady;
+    @BindView(R.id.recycler_view) RecyclerView recyclerView;
+
     final NoteAdapter adapter = new NoteAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
+        ButterKnife.bind(this);
 
-        buttonAddNote = findViewById(R.id.button_add_note);
-        buttonDeleteAllNotes = findViewById(R.id.button_delete_all_notes);
-        buttonReady = findViewById(R.id.button_ready);
-        recyclerView = findViewById(R.id.recycler_view);
+        noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
 
         initRecyclerView();
         observeNoteChange();
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void startEditActivity(Note note){
+    private void startEditActivity(Note note) {
         Intent intent = new Intent(MainActivity.this, AddEditNoteActivity.class);
         intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.getId());
         intent.putExtra(AddEditNoteActivity.EXTRA_OPTION, note.getTitle());
@@ -178,6 +181,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finishAffinity();
-
     }
 }

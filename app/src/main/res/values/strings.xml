@@ -10,7 +10,10 @@
     <string name="double_tap">&#8230;or just double tap on the image</string>
     <string name="option_1">Option 1</string>
     <string name="option_2">Option 2</string>
-
+    <string name="toast_setup_2_options">Set up at least 2 options</string>
+    <string name="toast_device_not_support">Your device doesn\'t support speech input</string>
+    <string name="toast_failed_recognize">Failed to recognize speech</string>
+    <string name="toast_insert_option">Please insert your option</string>
 
     <string name="fa_edit">\uf040</string>
     <string name="fa_trash_o">\uf014</string>
@@ -24,9 +27,4 @@
     <string name="fa_times">\uf00d</string>
     <string name="fa_angle_right">\uf105</string>
     <string name="fa_microphone">\uf130</string>
-
-    <string name="toast_setup_2_options">Set up at least 2 options</string>
-    <string name="toast_device_not_support">Your device doesn\'t support speech input</string>
-    <string name="toast_failed_recognize">Failed to recognize speech</string>
-    <string name="toast_insert_option">Please insert your option</string>
 </resources>

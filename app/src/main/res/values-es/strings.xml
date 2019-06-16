@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SHAKE.D</string>
+    <string name="ready_button">LISTO</string>
+    <string name="ok_button">OKAY</string>
+    <string name="cant_decide">No puedo decidir entre opciones:</string>
+    <string name="my_option">Mi opción:</string>
+    <string name="result_label_1">Su decisión :</string>
+    <string name="option_hint">Opción</string>
+    <string name="shake_device">¡Agitar el dispositivo!</string>
+    <string name="double_tap">&#8230;o simplemente doble toque en la imagen</string>
+    <string name="option_1">Opción 1</string>
+    <string name="option_2">Opción 2</string>
+    <string name="toast_setup_2_options">Configurar al menos 2 opciones</string>
+    <string name="toast_device_not_support">Su dispositivo no admite la entrada de voz</string>
+    <string name="toast_failed_recognize">Fallo al reconocer el habla</string>
+    <string name="toast_insert_option">Por favor inserte su opción</string>
+
+    <string name="fa_edit">\uf040</string>
+    <string name="fa_trash_o">\uf014</string>
+    <string name="fa_trash">\uf1f8</string>
+    <string name="fa_repeat">\uf01e</string>
+    <string name="fa_mobile">\uf10b</string>
+    <string name="fa_angle_double_left">\uf100</string>
+    <string name="fa_angle_double_right">\uf101</string>
+    <string name="fa_reshake">\uf10b</string>
+    <string name="fa_plus">\uf067</string>
+    <string name="fa_times">\uf00d</string>
+    <string name="fa_angle_right">\uf105</string>
+    <string name="fa_microphone">\uf130</string>
+</resources>

@@ -15,6 +15,9 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     private List<Note> notes = new ArrayList<>();
@@ -51,15 +54,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
-        private TextView titleTextView;
-        private Button editButton;
-        private Button deleteButton;
+
+        @BindView(R.id.title_text_view) TextView titleTextView;
+        @BindView(R.id.edit_button_view) Button editButton;
+        @BindView(R.id.delete_button_view) Button deleteButton;
 
         public NoteHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.title_text_view);
-            editButton = itemView.findViewById(R.id.edit_button_view);
-            deleteButton = itemView.findViewById(R.id.delete_button_view);
+            ButterKnife.bind(this, itemView);
 
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
