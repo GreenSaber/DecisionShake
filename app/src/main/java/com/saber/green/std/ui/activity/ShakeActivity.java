@@ -15,23 +15,22 @@ import com.squareup.seismic.ShakeDetector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ShakeActivity extends AppCompatActivity {
 
-    private TextView shakeText;
-    private ImageView phoneView;
-    private ImageView shakeView;
+    @BindView(R.id.shake_text_view) TextView shakeText;
+    @BindView(R.id.phoneView) ImageView phoneView;
+    @BindView(R.id.shakeView) ImageView shakeView;
     ShakeUtils shakeUtils;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shake);
-
-        shakeText = findViewById(R.id.shake_text_view);
-        phoneView = findViewById(R.id.phoneView);
-        shakeView = findViewById(R.id.shakeView);
+        ButterKnife.bind(this);
 
         initShakeUtils();
         onPhoneImageClick();
@@ -88,6 +87,8 @@ public class ShakeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent intent = new Intent(ShakeActivity.this, MainActivity.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 
