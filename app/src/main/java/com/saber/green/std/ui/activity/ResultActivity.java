@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.saber.green.std.R;
 import com.saber.green.std.entity.Note;
 import com.saber.green.std.utils.VibrationUtils;
@@ -27,12 +30,17 @@ public class ResultActivity extends AppCompatActivity {
     @BindView(R.id.result) TextView resultText;
     @BindView(R.id.button_shake_again) ImageButton shakeAgainButton;
     @BindView(R.id.button_restart) Button restartButton;
+    @BindView(R.id.adView) AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         ButterKnife.bind(this);
+
+        MobileAds.initialize(this, "ca-app-pub-2121398048827766~4429870535");
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        adView.loadAd(adRequest);
 
         resultViewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
         vibrationUtils = new VibrationUtils(this);
