@@ -44,11 +44,11 @@
         android:layout_width="@dimen/button_size_double"
         android:layout_height="@dimen/button_size_default"
         android:layout_marginEnd="@dimen/margin_default"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/shape_button_round"
         android:src="@drawable/ic_arrow_left_blue"
         app:backgroundTint="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/adView"
         app:layout_constraintEnd_toStartOf="@+id/button_restart"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -69,5 +69,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_shake_again" />
 
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2121398048827766/3280440392"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
