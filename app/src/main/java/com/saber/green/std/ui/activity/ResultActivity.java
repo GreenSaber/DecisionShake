@@ -39,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         MobileAds.initialize(this, "ca-app-pub-2121398048827766~4429870535");
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         adView.loadAd(adRequest);
 
         resultViewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
