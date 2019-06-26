@@ -6,11 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.muddzdev.styleabletoast.StyleableToast;
-import com.saber.green.std.entity.Note;
-import com.saber.green.std.ui.adapter.NoteAdapter;
-import com.saber.green.std.viewmodel.NoteViewModel;
-import com.saber.green.std.R;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +14,13 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.ads.MobileAds;
+import com.muddzdev.styleabletoast.StyleableToast;
+import com.saber.green.std.R;
+import com.saber.green.std.entity.Note;
+import com.saber.green.std.ui.adapter.NoteAdapter;
+import com.saber.green.std.viewmodel.NoteViewModel;
 
 import java.util.List;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        MobileAds.initialize(this, "ca-app-pub-2121398048827766~4429870535");
 
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
 
