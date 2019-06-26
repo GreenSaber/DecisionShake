@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         MobileAds.initialize(this, "ca-app-pub-2121398048827766~4429870535");
+        ButterKnife.bind(this);
 
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
 
