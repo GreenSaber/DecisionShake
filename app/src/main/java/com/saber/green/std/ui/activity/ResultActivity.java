@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.saber.green.std.R;
 import com.saber.green.std.entity.Note;
 import com.saber.green.std.utils.VibrationUtils;
@@ -38,7 +37,6 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         ButterKnife.bind(this);
 
-        MobileAds.initialize(this, "ca-app-pub-2121398048827766~4429870535");
         AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         adView.loadAd(adRequest);
 
