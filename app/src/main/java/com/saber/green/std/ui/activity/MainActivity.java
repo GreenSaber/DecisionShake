@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.getId());
         intent.putExtra(AddEditNoteActivity.EXTRA_OPTION, note.getTitle());
         startActivityForResult(intent, EDIT_NOTE_REQUEST);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
     }
 
     public void onEditNoteItemClick() {

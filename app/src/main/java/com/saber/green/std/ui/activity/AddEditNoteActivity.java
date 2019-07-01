@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.muddzdev.styleabletoast.StyleableToast;
 import com.saber.green.std.R;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -93,7 +93,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote() {
-        String option = textInputEditText.getText().toString();
+        String option = textInputEditText.getText().toString().trim();
         if (option.trim().isEmpty()) {
             StyleableToast.makeText(this, getString(R.string.toast_insert_option), Toast.LENGTH_LONG, R.style.customToastTop).show();
             return;
