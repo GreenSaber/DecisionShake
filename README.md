@@ -1,1 +1,1 @@
-# SHAKE.D - shake for decision
+# Random Decision - Shake device to decision
